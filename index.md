@@ -6,9 +6,9 @@ The meme I decided to create does not necessarilly follow a specific "meme forma
 Memes are a form of comunication; they say a lot about a person's interests, their socio-economic standing, or even mental well-being. They express something that is relatable or understood beyond what is literally depicted. My meme is inspired by **vintage arcade games** and the trending **indie game scene** that often uses pixel art. It is a style that feels familiar and gives the perceiver a sense of nostalgia or childishness. <br>
 
 ![Old Favourite, Zelda](https://upload.wikimedia.org/wikipedia/en/3/3a/Legend_of_Zelda_NES.PNG) <br>
-https://zelda.fandom.com/wiki/The_Legend_of_Zelda
+[Zelda Fandom Webpage](https://zelda.fandom.com/wiki/The_Legend_of_Zelda)
 ![Indie Game INMOST (Highly Recommend)](https://www.destructoid.com/wp-content/uploads/2020/12/569328-Inmost1.jpg)
-https://inmostgame.com/ 
+[Official INMOST Webpage](https://inmostgame.com/)
 
 A common reaction to posts on social media nowadays are to be shocked or embarassed. I came up with the idea of showing a health bar declining, followed by a *"game over"* in a typical 80s style, im hopes that it would make for a good reaction meme that is easily interpreted and feels familiar.
 
