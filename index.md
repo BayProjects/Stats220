@@ -3,7 +3,8 @@
 ***
 
 The meme I decided to create does not necessarilly follow a specific "meme format". I wanted to develop the kind of gif that is used as a **response** to something (*eg. what would typically be found in the comment section of a post on social media*). <br>
-Memes are a form of comunication; they say a lot about a person's interests, their socio-economic standing, or even mental well-being. They express something that is relatable or understood beyond what is literally depicted. My meme is inspired by **vintage arcade games** and the trending **indie game scene** that often uses pixel art. It is a style that feels familiar and gives the perceiver a sense of nostalgia or childishness.
+Memes are a form of comunication; they say a lot about a person's interests, their socio-economic standing, or even mental well-being. They express something that is relatable or understood beyond what is literally depicted. My meme is inspired by **vintage arcade games** and the trending **indie game scene** that often uses pixel art. It is a style that feels familiar and gives the perceiver a sense of nostalgia or childishness. <br>
+
 ![Old Favourite, Zelda](https://upload.wikimedia.org/wikipedia/en/3/3a/Legend_of_Zelda_NES.PNG) <br>
 https://zelda.fandom.com/wiki/The_Legend_of_Zelda
 ![Indie Game INMOST (Highly Recommend)](https://www.destructoid.com/wp-content/uploads/2020/12/569328-Inmost1.jpg)
