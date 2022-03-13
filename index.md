@@ -16,7 +16,7 @@ A common reaction to posts on social media nowadays are to be shocked or embaras
 >![Game Over Meme](Game_Over.gif) <br>
 >~Random Comment
 
-### To build my GIF meme I took the following steps:
+### To build this GIF meme one must:
 * define coloured blocks to use as pixels
 * append these blocks of coloured pixels to a vector of 'pixels'
 * stack the rows to create a vector of 'pixel rows' that completes the image
