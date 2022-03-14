@@ -6,27 +6,124 @@ The meme I decided to create does not necessarilly follow a specific "meme forma
 Memes are a form of comunication; they say a lot about a person's interests, their socio-economic standing, or even mental well-being. They express something that is relatable or understood beyond what is literally depicted. My meme is inspired by **vintage arcade games** and the trending **indie game scene** that often uses pixel art. It is a style that feels familiar and gives the perceiver a sense of nostalgia or childishness. <br>
 
 ![Old Favourite, Zelda](https://upload.wikimedia.org/wikipedia/en/3/3a/Legend_of_Zelda_NES.PNG) <br>
-[Zelda Fandom Webpage](https://zelda.fandom.com/wiki/The_Legend_of_Zelda)
+[Zelda Fandom Webpage](https://zelda.fandom.com/wiki/The_Legend_of_Zelda) <br>
+<br>
 ![Indie Game INMOST (Highly Recommend)](https://www.destructoid.com/wp-content/uploads/2020/12/569328-Inmost1.jpg)
 [Official INMOST Webpage](https://inmostgame.com/)
-
-A common reaction to posts on social media nowadays are to be shocked or embarassed. I came up with the idea of showing a health bar declining, followed by a *"game over"* in a typical 80s style, im hopes that it would make for a good reaction meme that is easily interpreted and feels familiar.
-
+<br>
+<br>
 >## DED 💔 💀 💀
 >![Game Over Meme](Game_Over.gif) <br>
->~Random Comment
+> ~ Random Comment
 
-### To build this GIF meme one must:
-* define coloured blocks to use as pixels
-* append these blocks of coloured pixels to a vector of 'pixels'
-* stack the rows to create a vector of 'pixel rows' that completes the image
-* append full images in a row to mimic a health bar
-* create the right combinations of images to animate later
-* crop and color edit a background image from the internet
-* annotate text over stylised background
-* animate the final combination of images
+A common reaction to posts on social media nowadays are to be shocked or embarassed. I came up with the idea of showing a health bar declining, followed by a *"game over"* in a typical 80s style, in hopes that it would make for a good reaction meme that is ironic, easily interpreted and feels familiar.
 
-### Below is the code I used with the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) to make my meme:
+
+> ### Skills we will use to build our GIF:
+> - Defining coloured blocks to use as pixels
+> - Appending these blocks of coloured pixels to a vector of 'pixel rows'
+> - Stacking the rows to create a vector of 'pixel rows' that completes the image
+> - Appending full images in a row to mimic a health bar
+> - Creating the right combinations of images to animate later
+> - Croping and color-editing a background image from the internet
+> - Annotating text over a stylised background
+> - Animating the final combination of images
+
+It seems harder than it is, so below is a simple example of formatting images and appending them together. We will be using this technique later in order to build our pixel art later on.
+***
+# *Let's start coding!*
+<br>
+
+> ### Steps for building a simple meme:
+> 1. Upload images
+> 2. Crop or scale them to size
+> 3. Add frames (optional)
+> 4. Render two black blocks of the same size as the meme images
+> 5. Annotate over the blocks
+> 6. Edit variables such as font, gravity, size, weight and strokecolor (optional)
+> 7. Append the images together and the text blocks together to form columns
+> 8. Bring the columns together
+> 9. After a final check, save the image
+>
+> ### Here is a code sample that uses the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package to create our simple meme:
+>
+> - **Loading the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package.**
+> ```
+> library(magick)
+> ```
+> - **Uploading images from folder**
+>     - Scaling and cropping them to size 300x300px with *'image_scale()'* and *'image_crop()'*
+>     - Adding a frame with *'image_border'*
+> ```
+> #Meme images
+> meme_face_1 = image_read(path = "Images/Meme_Face_1.jpg") %>%
+>   image_trim() %>%
+>   image_scale(300) %>%
+>   image_crop(geometry = "300x300", gravity = 'north') %>%
+>   image_border(color = "#000000", geometry = "10x10")
+>
+> meme_face_2 = image_read(path = "Images/Meme_Face_2.jpg") %>%
+>   image_trim() %>%
+>   image_scale(300) %>%
+>   image_crop(geometry = "300x300", gravity = 'north') %>%
+>   image_border(color = "#000000", geometry = "10x10")
+> ```
+> - **Creating a blank image and annotating over it**
+>     - Centering the text with *'gravity'*
+>     - Making the text **bold** with *'weight'* 
+>     - Adding a colour around the letters with *'strokecolor'*
+>     
+> ``` 
+> #Text
+> annotate_1 = image_blank(300, 300, color = "black") %>%
+>   image_annotate(text = "One does not simply meme.",
+>                  gravity = "center", size = 21.5, 
+>                  weight = 700, font = "Helvetica",
+>                  strokecolor = "white") %>%
+>   image_scale(300) %>%
+>   image_border(color = "#000000", geometry = "10x10")
+>
+> annotate_2 = image_blank(300, 300, color = "black") %>%
+>   image_annotate(text = '"OnE DOeS nOt siMPly MEmE"',
+>                  gravity = "center", size = 21.5, 
+>                  weight = 700, font = "Helvetica",
+>                  strokecolor = "white") %>%
+>   image_scale(300) %>%
+>   image_border(color = "#000000", geometry = "10x10")
+> ```
+> - **Stacking the images and the text blocks to create two columns**
+> ```
+> #Meme Columns
+> picture = image_append(c(meme_face_1, meme_face_2), stack = T)
+> words = image_append(c(annotate_1, annotate_2), stack = T)
+> ```
+> - **Appending the two columns together to complete the meme**
+> ```
+> #Full meme
+> full_meme = image_append(c(picture, words))  %>%
+>   image_border(color = "#000000", geometry = "30x30")
+> full_meme
+> ```
+> - **A final check on the individual consituent's details**
+> ```
+> #final check
+> image_info(c(meme_face_1, meme_face_2, annotate_1, annotate_2))
+> ```
+> - **Saving the image in a subfolder named *'Images'***
+> ```
+> #storing image
+> image_write(full_meme, path = "Images/One Does Not Simply Meme.png", format = "png")
+> ```
+> ### Our final result!
+> ![My First Meme](Simply_Meme.png) 
+
+
+
+
+
+# *Now to building a GIF!*
+
+### Here is a program that uses the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package to build our GIF:
 ```
 library(magick)
 
@@ -199,7 +296,9 @@ heart_4 = c(w_row, row_1d, row_2d, row_3d, row_4d, row_5d, w_row, w_row) %>%
   image_scale(100)
 
 #Empty heart
-heart_5 = c(w_row, w_row, w_row, w_row, w_row, w_row, w_row, w_row)
+heart_5 = c(w_row, w_row, w_row, w_row, w_row, w_row, w_row, w_row) %>%
+  image_append(stack = TRUE) %>%
+  image_scale(100)
 ```
 
 
@@ -254,5 +353,17 @@ game_over
 image_write(game_over, path = "Images/Game_Over.gif", format = "gif")``
 ```
 
-### This is my final result
+### Our final result
 ![Game Over Meme](Game_Over.gif)
+
+### Hopefully by the end of this tutorial, you should be able to understand the following tasks:
+- [x] Defining coloured blocks to use as pixels
+- [x] Appending these blocks of coloured pixels to a vector of 'pixel rows'
+- [x] Stacking the rows to create a vector of 'pixel rows' that completes the image
+- [x] Appending full images in a row to mimic a health bar
+- [x] Creating the right combinations of images to animate later
+- [x] Croping and color-editing a background image from the internet
+- [x] Annotating text over a stylised background
+- [x] Animating the final combination of images
+
+
