@@ -52,8 +52,9 @@ It seems harder than it is, so below is a simple example of formatting images an
 > library(magick)
 > ```
 > - **Uploading images from folder**
->     - Scaling and cropping them to size 300x300px with *'image_scale()'* and *'image_crop()'*
->     - Adding a frame with *'image_border'*
+>     - Scaling and cropping them to size 300x300px with *image_scale()* and *image_crop()*
+>     - Adding a frame with *image_border*
+>
 > ```
 > #Meme images
 > meme_face_1 = image_read(path = "Images/Meme_Face_1.jpg") %>%
@@ -68,6 +69,7 @@ It seems harder than it is, so below is a simple example of formatting images an
 >   image_crop(geometry = "300x300", gravity = 'north') %>%
 >   image_border(color = "#000000", geometry = "10x10")
 > ```
+> 
 > - **Creating a blank image and annotating over it**
 >     - Centering the text with *'gravity'*
 >     - Making the text **bold** with *'weight'* 
