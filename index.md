@@ -45,9 +45,14 @@ It seems harder than it is, so below is a simple example of formatting images an
 > 8. Bring the columns together
 > 9. After a final check, save the image
 
+
  ### Here is a code sample that uses the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package to create our simple meme:
 
+
+
  - **Loading the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package.**
+
+
  ```
  library(magick)
  ```
@@ -138,7 +143,10 @@ It seems harder than it is, so below is a simple example of formatting images an
  image_write(full_meme, path = "Images/One Does Not Simply Meme.png", format = "png")
  ```
  
+ 
  ### Our final result!
+ 
+ 
  ![My First Meme](Simply_Meme.png) 
 
 
