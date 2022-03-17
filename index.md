@@ -45,9 +45,9 @@ It seems harder than it is, so below is a simple example of formatting images an
 > 8. Bring the columns together
 > 9. After a final check, save the image
 
-
+<br>
  ### Here is a code sample that uses the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package to create our simple meme:
-
+<br>
 
 
  - **Loading the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package.**
