@@ -46,8 +46,12 @@ It seems harder than it is, so below is a simple example of formatting images an
 > 9. After a final check, save the image
 
 <br>
+
+
  ### Here is a code sample that uses the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package to create our simple meme:
-<br>
+ 
+ 
+
 
 
  - **Loading the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package.**
@@ -142,9 +146,11 @@ It seems harder than it is, so below is a simple example of formatting images an
  #storing image
  image_write(full_meme, path = "Images/One Does Not Simply Meme.png", format = "png")
  ```
- 
+
+
  
  ### Our final result!
+ 
  
  
  ![My First Meme](Simply_Meme.png) 
