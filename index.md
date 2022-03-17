@@ -47,8 +47,7 @@ It seems harder than it is, so below is a simple example of formatting images an
 
 <br>
 
-
-### Here is a code sample that uses the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package to create our simple meme:
+<h3> Here is a code sample that uses the <a href= "https://cran.r-project.org/web/packages/magick/vignettes/intro.html">{magick}</a> package to create our simple meme: </h3>
 
 
  - **Loading the [{magick}](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) package.**
@@ -146,7 +145,7 @@ It seems harder than it is, so below is a simple example of formatting images an
 
 
  
-### Our final result!
+<h3> Our final result! </h3>
  
  
  
